@@ -38,7 +38,7 @@ export const App = () => {
             <MessageBox headerText="Program Resources">
                 <p>​Have questions? Click {' '}
                   <a href="https&#58;//liberty.verinthms.com/GTConnect/UnifiedAcceptor/LMAuthDesktop.Main/session34613841"
-                    target="_blank">here</a>
+                    target="_blank" rel="noreferrer" >here</a>
                   {' '} to learn more about the program and small business appetite.
                 </p>
             </MessageBox>
