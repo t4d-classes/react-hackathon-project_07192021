@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import { HomePage } from './pages/HomePage';
+import { AdminPage } from './pages/AdminPage';
 import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
 import { MessageBox } from './components/MessageBox';
 import { MenuBar } from './components/MenuBar';
-import { BusinessPage } from './pages/BusinessPage';
 
 const pages = [
   { id: 1, to: "/home", label: "Home", component: HomePage },
-  { id: 2, to: "/coverages", label: "Coverages", component: CoveragesPage },
-  { id: 3, to: "/regions", label: "Regions", component: RegionsPage },
-  { id: 4, to: "/ops", label: "Ops", component: BusinessPage },
+  { id: 2, to: "/admin", label: "Admin", component: AdminPage },
+  { id: 3, to: "/coverages", label: "Coverages", component: CoveragesPage },
+  { id: 4, to: "/regions", label: "Regions", component: RegionsPage },
 ];
 
 export const App = () => {
