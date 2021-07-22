@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
 import { LeadIntakePage } from './pages/LeadIntakePage';
@@ -25,16 +24,13 @@ export const App = () => {
               <img src="/images/LMI_H_BLUE_RGB.png" alt="LM Logo" />
             </Link>
           </div>
-          <MenuBar menuItems={pages} />
+          
         </header>
         <div className="row">
           <main id="content" className="col-md-12">
             <Switch>
               {pages.map(page =>
-                <Route key={page.id} path={page.to} component={page.component} />)}
-              <Route path="/" exact>
-                <HomePage />
-              </Route>
+                <Route key={page.id} path={page.to} component={page.component} />)}              
             </Switch>
           </main>
         </div>
