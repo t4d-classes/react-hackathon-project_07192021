@@ -1,0 +1,64 @@
+{
+    "leadIntakeForm": [
+        {
+            "id": 1,
+            "fullName": "Corporation",
+            "nNumber": "",
+            "agencyEmail": "",
+            "agencyPhoneNumber":"",
+            "insuredName":"",
+            "firstName":"",
+            "lastName": "",
+            "customerPhoneNumber": "",
+            "streetAddress":"",
+            "city":"",
+            "state": "",
+            "customerEmailAddress":"",
+            "descBusinessOperation":"",
+            "typeOfQuote":"",
+            "coverages": [],
+            "blscRepName":"",
+            "formType":""
+        },{
+            "id": 2,
+            "fullName": "Corporation",
+            "nNumber": "",
+            "agencyEmail": "",
+            "agencyPhoneNumber":"",
+            "insuredName":"",
+            "firstName":"",
+            "lastName": "",
+            "customerPhoneNumber": "",
+            "streetAddress":"",
+            "city":"",
+            "state": "",
+            "customerEmailAddress":"",
+            "descBusinessOperation":"",
+            "typeOfQuote":"",
+            "coverages": [],
+            "blscRepName":"",
+            "formType":""
+        },
+        {
+            "id": 3,
+            "fullName": "Corporation",
+            "nNumber": "",
+            "agencyEmail": "",
+            "agencyPhoneNumber":"",
+            "insuredName":"",
+            "firstName":"",
+            "lastName": "",
+            "customerPhoneNumber": "",
+            "streetAddress":"",
+            "city":"",
+            "state": "",
+            "customerEmailAddress":"",
+            "descBusinessOperation":"",
+            "typeOfQuote":"",
+            "coverages": [],
+            "blscRepName":"",
+            "formType":""
+        }
+
+    ]
+  }
