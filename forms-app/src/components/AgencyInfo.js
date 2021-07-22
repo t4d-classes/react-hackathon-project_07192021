@@ -4,14 +4,16 @@ export const AgencyInfo = ({formData, change}) => {
 
   return (
     <div className='container'>
+      <h1>Lead Intake</h1>
+      <br />
       <h1>Agency Information</h1>
       {/* agency code name */}
       <div className="row">
-        <div className="col-md-8 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmgbi_formTitle" htmlFor="name-input">
             Agency Code
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
                  className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -23,11 +25,11 @@ export const AgencyInfo = ({formData, change}) => {
 
       {/* producer's mobile */}
       <div className="row">
-        <div className="col-md-8 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmbi_formTitle" htmlFor="name-input">
             Producer's Mobile/Cell
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
                  className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -37,13 +39,16 @@ export const AgencyInfo = ({formData, change}) => {
         </div>
       </div>
       <i>*Acknowledgement of lead submission will be sent via text to the above provided number.</i>
+
       {/* producer's name */}
+      <br />
+      <br />
       <div className="row">
-        <div className="col-md-8 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmgbi_formTitle" htmlFor="name-input">
             Producer Name
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
                  className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -54,11 +59,11 @@ export const AgencyInfo = ({formData, change}) => {
       </div>
       {/* producer's email */}
       <div className="row">
-        <div className="col-md-8 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmgbi_formTitle" htmlFor="name-input">
             Producer's Email
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
                  className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"

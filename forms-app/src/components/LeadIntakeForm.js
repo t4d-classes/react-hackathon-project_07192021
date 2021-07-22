@@ -31,9 +31,9 @@ export const LeadIntakeForm = ({onSubmitForm} ) => {
       resetIntakeForm();
     });
   };
-  
+
 //  const [errorMessage, setErrorMessage] = useState('');
-  
+
  // const submitForm = () => {
  //   setErrorMessage('');
  //   onSubmitForm({ name: businessOperationForm.businessType });
@@ -41,7 +41,7 @@ export const LeadIntakeForm = ({onSubmitForm} ) => {
  // };
 
   return (
-    <form className="container-fluid">
+    <form className="content-cms">
       <AgencyInfo formData={intakeForm} change={change} />
       <br />
       <ProspectiveCustomer formData={intakeForm} change={change} />

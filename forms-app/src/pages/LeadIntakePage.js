@@ -9,14 +9,11 @@ export const LeadIntakePage = () => {
   const { appendBusiness } = useBusiness();
 
   return (
-    <div className="row">
-      <header>
-        <h1>Lead Intake</h1>
-      </header>
-      <main id="content" className="col-md-8">
+    <div className="container-fluid">
+      <main id="content" className="col-md-8 column-primary">
         <LeadIntakeForm />
       </main>
-      <aside id="sidebar" className="col-md-4">
+      <aside id="sidebar" className="col-md-4 column-secondary">
         <SmallBusinessGuide smallBusinessData={smallBusinessData}/>
       </aside>
     </div>

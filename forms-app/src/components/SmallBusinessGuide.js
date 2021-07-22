@@ -5,7 +5,7 @@ export const SmallBusinessGuide = ({ smallBusinessData }) => {
     <div className="panel panel-default">
         <h3 className="panel-heading">Small Business Appetite Guide</h3>
         <div className="panel-body">
-            <h3 style={{ color: "darkblue", textAlign: 'center', textDecoration: 'underline' }}>Prefered</h3>
+            <h3 style={{ color: "darkblue", textAlign: 'center', textDecoration: 'underline' }}>Preferred</h3>
             {smallBusinessData.map(smd =>
                 <div key={smd.id}>
                     <h3 key={smd.label} style={{ color: "darkblue"}}>{smd.label}:</h3>

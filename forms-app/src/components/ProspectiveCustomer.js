@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export const ProspectiveCustomer = ({ formData, change }) => {
-  const {namedInsured,firstName,lastName,phoneNumber,emailAddress,state} = formData
+  const {namedInsured, firstName, lastName, phoneNumber, emailAddress, state } = formData
 
   return (
 
@@ -9,11 +9,11 @@ export const ProspectiveCustomer = ({ formData, change }) => {
       <h1>Prospective Customer</h1>
       <div className="row">
         {/* Named Insured */}
-        <div className="col-md-4 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmgbi_formTitle" htmlFor="name-input">
             Named Insured
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
             className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -22,11 +22,11 @@ export const ProspectiveCustomer = ({ formData, change }) => {
           <span className="lmgbi_formAlert" style={{ color: 'red', display: 'none ' }}>agency required</span>
         </div>
 
-        <div className="col-md-4 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmgbi_formTitle" htmlFor="name-input">
             First Name
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
             className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -38,11 +38,11 @@ export const ProspectiveCustomer = ({ formData, change }) => {
 
       <div className="row">
         {/* Last Name */}
-        <div className="col-md-4 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmgbi_formTitle" htmlFor="name-input">
             Last Name
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
             className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -51,11 +51,11 @@ export const ProspectiveCustomer = ({ formData, change }) => {
           <span className="lmgbi_formAlert" style={{ color: 'red', display: 'none ' }}>agency required</span>
         </div>
 
-        <div className="col-md-4 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmgbi_formTitle" htmlFor="name-input">
             Phone Number
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
             className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -68,11 +68,11 @@ export const ProspectiveCustomer = ({ formData, change }) => {
 
       <div className="row">
         {/* Email Address */}
-        <div className="col-md-4 form-group lmgbi_formEntry">
+        <div className="col-sm-5 form-group lmgbi_formEntry">
+          <span className="required-marker"></span>
           <label className="lmgbi_formTitle" htmlFor="name-input">
             Email Address
           </label>
-          <span className="required-marker"></span>
           <br />
           <input id="name-input" type="text"
             className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -81,12 +81,12 @@ export const ProspectiveCustomer = ({ formData, change }) => {
           <span className="lmgbi_formAlert" style={{ color: 'red', display: 'none ' }}>agency required</span>
         </div>
 
-        <div className="col-md-3 form-group form-inline lmgbi_formEntry">
-          <label className="lmgbi_formTitle">State:</label><span className="required-marker"></span>
+        <div className="col-sm-5 control-select">
+          <span className="required-marker"></span>
+          <label className="lmgbi_formTitle">State:</label>
           <br />
-          <select className="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
-            id="lmgbi_formState">
-            <option>Select One</option>
+          <select className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" date-field-name="state">
+            <option disabled="disabled" selected="selected">--None--</option>
             <option value="AK|West">AK</option>
             <option value="AL|South">AL</option>
             <option value="AR|Central">AR</option>
@@ -141,14 +141,7 @@ export const ProspectiveCustomer = ({ formData, change }) => {
           <br />
           <span className="lmgbi_formAlert" style={{ color: 'red', display: 'none ' }}>State required</span>
         </div>
-
       </div>
-
-
-
-
-
-
     </div>
   );
 };
