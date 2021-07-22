@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const LeadIntakeTable = ({ leadIntakeData }) => {
+export const LeadIntakeTable = ({ leadIntakeData, deleteRow }) => {
 
   return (
     <table className="table">
@@ -11,6 +11,7 @@ export const LeadIntakeTable = ({ leadIntakeData }) => {
         <th>Customer Name</th>
         <th>Type of Quote</th>
         <th>Coverage(s)</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
@@ -24,6 +25,7 @@ export const LeadIntakeTable = ({ leadIntakeData }) => {
             {leadIntakeData.coverages.map(coverage => <li key={coverage}>{coverage}</li>)}
           </ul>
         </td>
+        <td><button type="button" onClick={deleteRow} id={leadIntakeData.id}>Delete</button></td>
       </tr>)}
       </tbody>
     </table>
