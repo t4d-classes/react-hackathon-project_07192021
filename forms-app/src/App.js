@@ -24,13 +24,16 @@ export const App = () => {
               <img src="/images/LMI_H_BLUE_RGB.png" alt="LM Logo" />
             </Link>
           </div>
-          
+
         </header>
         <div className="row">
           <main id="content" className="col-md-12">
             <Switch>
               {pages.map(page =>
-                <Route key={page.id} path={page.to} component={page.component} />)}              
+                <Route key={page.id} path={page.to} component={page.component} />)}
+              <Route path="/" exact>
+                <HomePage />
+              </Route>
             </Switch>
           </main>
         </div>
