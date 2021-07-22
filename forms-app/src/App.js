@@ -38,7 +38,6 @@ export const App = () => {
               </Route>
             </Switch>
           </main>
-          
         </div>
         <footer id="page-footer" className="row">
           <div className="col-md-12">
