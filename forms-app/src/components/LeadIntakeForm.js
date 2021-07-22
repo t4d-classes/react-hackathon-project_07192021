@@ -2,9 +2,9 @@ import { AgencyInfo } from './AgencyInfo'
 
 import { useForm } from '../hooks/useForm'
 
-export const LeadIntakeFormCon = () => {
+export const LeadIntakeForm = () => {
 
-  const [leadIntakeForm, change, resetleadIntakeForm] = useForm({
+  const [intakeForm, change, resetIntakeForm] = useForm({
     // Agency Information inputs
     agencyCode: '',
     mobile: '',
@@ -26,7 +26,7 @@ export const LeadIntakeFormCon = () => {
 
   return (
     <form className="container-fluid">
-      <AgencyInfo formData={leadIntakeForm} change={change} />
+      <AgencyInfo formData={intakeForm} change={change} />
     </form>
   )
 }
