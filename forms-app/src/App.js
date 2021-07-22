@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-
+import { ProspectivePage } from './pages/ProspectivePage';
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
 import { LeadIntakePage } from './pages/LeadIntakePage';
@@ -26,7 +26,7 @@ export const App = () => {
               <img src="/images/LMI_H_BLUE_RGB.png" alt="LM Logo" />
             </Link>
           </div>
-          <MenuBar menuItems={pages} />
+          
         </header>
         <div className="row">
           <main id="content" className="col-md-8">
@@ -34,18 +34,11 @@ export const App = () => {
               {pages.map(page =>
                 <Route key={page.id} path={page.to} component={page.component} />)}
               <Route path="/" exact>
-                <HomePage />
+              <ProspectivePage />
               </Route>
             </Switch>
           </main>
-          <aside id="sidebar" className="col-md-4">
-            <MessageBox headerText="Program Resources">
-              Some content
-            </MessageBox>
-            <MessageBox headerText="​Small Business Appetite Guide">
-              Some content
-            </MessageBox>
-          </aside>
+          
         </div>
         <footer id="page-footer" className="row">
           <div className="col-md-12">
