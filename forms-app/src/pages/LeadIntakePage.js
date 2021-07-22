@@ -10,7 +10,6 @@ export const LeadIntakePage = () => {
       <header>
         <h1>Lead Intake</h1>
       </header>
-      <p>Welcome to the Lead Intake page</p>
       <LeadIntakeForm />
     </div>
   );

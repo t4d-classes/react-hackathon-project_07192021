@@ -38,14 +38,6 @@ export const App = () => {
               </Route>
             </Switch>
           </main>
-          <aside id="sidebar" className="col-md-4">
-            <MessageBox headerText="Program Resources">
-              Some content
-            </MessageBox>
-            <MessageBox headerText="​Small Business Appetite Guide">
-              Some content
-            </MessageBox>
-          </aside>
         </div>
         <footer id="page-footer" className="row">
           <div className="col-md-12">
