@@ -4,7 +4,6 @@ import { AdminPage } from './pages/AdminPage';
 import { LeadIntakePage } from './pages/LeadIntakePage';
 import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
-import { MessageBox } from './components/MessageBox';
 import { MenuBar } from './components/MenuBar';
 
 const pages = [
@@ -28,7 +27,7 @@ export const App = () => {
           
         </header>
         <div className="row">
-          <main id="content" className="col-md-8">
+          <main id="content" className="col-md-12">
             <Switch>
               {pages.map(page =>
                 <Route key={page.id} path={page.to} component={page.component} />)}              
