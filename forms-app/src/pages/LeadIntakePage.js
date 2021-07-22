@@ -4,11 +4,11 @@ import { useLeads } from "../hooks/useLeads";
 
 export const LeadIntakePage = () => {
 
-  const { leads, deleteLead,  addLeadIntakeForm } = useLeads();
+  const { leads, deleteLead,  addLead } = useLeads();
 
   return (
     <div>
-      <LeadIntakeForm onSubmitForm={addLeadIntakeForm} />
+      <LeadIntakeForm onSubmitForm={addLead} />
     </div>
   );
 
