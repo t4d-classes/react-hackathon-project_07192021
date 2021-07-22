@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { ProspectivePage } from './pages/ProspectivePage';
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
 import { LeadIntakePage } from './pages/LeadIntakePage';
@@ -32,10 +31,7 @@ export const App = () => {
           <main id="content" className="col-md-8">
             <Switch>
               {pages.map(page =>
-                <Route key={page.id} path={page.to} component={page.component} />)}
-              <Route path="/" exact>
-              <ProspectivePage />
-              </Route>
+                <Route key={page.id} path={page.to} component={page.component} />)}              
             </Switch>
           </main>
         </div>

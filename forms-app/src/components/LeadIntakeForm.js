@@ -1,4 +1,5 @@
-import { AgencyInfo } from './AgencyInfo'
+import { AgencyInfo } from './AgencyInfo';
+import {ProspectiveCustomer} from './ProspectiveCustomer'
 
 import { useForm } from '../hooks/useForm'
 
@@ -27,6 +28,9 @@ export const LeadIntakeForm = () => {
   return (
     <form className="container-fluid">
       <AgencyInfo formData={intakeForm} change={change} />
+      <br />
+      <ProspectiveCustomer formData={intakeForm} change={change} />
     </form>
   )
 }
+
