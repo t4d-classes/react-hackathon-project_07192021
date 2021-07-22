@@ -1,15 +1,14 @@
-//import { CoverageList } from "../components/CoverageList";
 import { LeadIntakeForm } from "../components/LeadIntakeForm";
 
-//import { useCoverages } from "../hooks/useCoverages";
+import { useLeads } from "../hooks/useLeads";
 
 export const LeadIntakePage = () => {
 
-  //const { coverages, appendCoverage } = useCoverages();
+  const { leads, deleteLead,  addLeadIntakeForm } = useLeads();
 
   return (
     <div>
-      <LeadIntakeForm />
+      <LeadIntakeForm onSubmitForm={addLeadIntakeForm} />
     </div>
   );
 
