@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
+import { LeadIntakePage } from './pages/LeadIntakePage';
 import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
 import { MessageBox } from './components/MessageBox';
@@ -9,9 +10,10 @@ import { MenuBar } from './components/MenuBar';
 
 const pages = [
   { id: 1, to: "/home", label: "Home", component: HomePage },
-  { id: 2, to: "/admin", label: "Admin", component: AdminPage },
+  { id: 2, to: "/leadintake", label: "Lead Intake", component: LeadIntakePage },
   { id: 3, to: "/coverages", label: "Coverages", component: CoveragesPage },
   { id: 4, to: "/regions", label: "Regions", component: RegionsPage },
+  { id: 5, to: "/admin", label: "Admin", component: AdminPage },
 ];
 
 export const App = () => {
