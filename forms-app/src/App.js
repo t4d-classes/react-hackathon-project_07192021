@@ -24,8 +24,9 @@ export const App = () => {
               <img src="/images/LMI_H_BLUE_RGB.png" alt="LM Logo" />
             </Link>
           </div>
-
+          <MenuBar menuItems={pages} />
         </header>
+
         <div className="row">
           <main id="content" className="col-md-12">
             <Switch>

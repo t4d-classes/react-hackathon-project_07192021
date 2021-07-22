@@ -13,7 +13,6 @@ export const LeadIntakePage = () => {
       <header>
         <h1>Lead Intake</h1>
       </header>
-      <LeadIntakeForm />
       <main id="content" className="col-md-8">
         <LeadIntakeForm />
       </main>

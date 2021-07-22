@@ -6,7 +6,7 @@ export const ProspectiveCustomer = ({ formData, change }) => {
   return (
 
     <div className="container">
-      <h2>Prospective Customer</h2>
+      <h1>Prospective Customer</h1>
       <div className="row">
         {/* Named Insured */}
         <div className="col-md-4 form-group lmgbi_formEntry">

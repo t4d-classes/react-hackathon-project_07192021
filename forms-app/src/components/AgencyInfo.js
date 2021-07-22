@@ -4,7 +4,7 @@ export const AgencyInfo = ({formData, change}) => {
 
   return (
     <div className='container'>
-      <h2>Agency Information</h2>
+      <h1>Agency Information</h1>
       {/* agency code name */}
       <div className="row">
         <div className="col-md-8 form-group lmgbi_formEntry">
