@@ -1,4 +1,5 @@
 import { LeadIntakeTable } from "../components/LeadIntakeTable";
+import {useLeads} from "../hooks/useLeads";
 
 const dummyData = [
   {
@@ -64,6 +65,8 @@ const dummyData = [
 
 export const LeadIntakeTablePage = () => {
 
+  const { leads, removeLead } = useLeads();
+
   const deleteRow = (event) => {
     console.log(event.target.id);
   }
@@ -74,7 +77,7 @@ export const LeadIntakeTablePage = () => {
         <h1>Small Commercial Lead Intake Table</h1>
       </header>
       <p>Here is a list of the lead intakes!</p>
-      <LeadIntakeTable leadIntakeData={dummyData} deleteRow={deleteRow}/>
+      <LeadIntakeTable leadIntakeData={leads} deleteRow={removeLead}/>
     </div>
   );
 
