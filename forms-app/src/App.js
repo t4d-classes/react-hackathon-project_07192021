@@ -38,7 +38,11 @@ export const App = () => {
           </main>
           <aside id="sidebar" className="col-md-4">
             <MessageBox headerText="Program Resources">
-              Some content
+                <p>​Have questions? Click {' '}
+                  <a href="https&#58;//liberty.verinthms.com/GTConnect/UnifiedAcceptor/LMAuthDesktop.Main/session34613841"
+                    target="_blank" rel="noreferrer" >here</a>
+                  {' '} to learn more about the program and small business appetite.
+                </p>
             </MessageBox>
             <MessageBox headerText="​Small Business Appetite Guide">
               Some content
