@@ -5,11 +5,13 @@ import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
 import { MessageBox } from './components/MessageBox';
 import { MenuBar } from './components/MenuBar';
+import { BusinessPage } from './pages/BusinessPage';
 
 const pages = [
   { id: 1, to: "/home", label: "Home", component: HomePage },
   { id: 2, to: "/coverages", label: "Coverages", component: CoveragesPage },
   { id: 3, to: "/regions", label: "Regions", component: RegionsPage },
+  { id: 4, to: "/ops", label: "Ops", component: BusinessPage },
 ];
 
 export const App = () => {
