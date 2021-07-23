@@ -9,7 +9,9 @@ import { MessageBox } from './components/MessageBox';
 import { MenuBar } from './components/MenuBar';
 import {LeadIntakeTablePage1} from "./pages/LeadIntakeTablePage1";
 import { LeadIntakePage1 } from './pages/LeadIntakePage1';
-import {AgtAppointPage} from "./pages/AgtAppointPage";
+import { AdminLeadIntakePage } from './pages/AdminLeadIntakePage';
+import { AgtAppointPage } from "./pages/AgtAppointPage";
+
 
 const pages = [
   { id: 1, to: "/home", label: "Home", component: HomePage },
@@ -42,6 +44,9 @@ export const App = () => {
                 <Route key={page.id} path={page.to} component={page.component} />)}
               <Route path="/adminAgtAppoint">
                 <AdminAgtAppointPage />
+              </Route>
+              <Route path="/adminLeadIntake">
+                <AdminLeadIntakePage/>
               </Route>
               <Route path="/" exact>
                 <HomePage />
