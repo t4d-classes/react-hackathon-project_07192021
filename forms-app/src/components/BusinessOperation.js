@@ -5,18 +5,9 @@ import { useForm } from "../hooks/useForm";
 
 import { useChecklist } from 'react-checklist';
 
-
-const dataList = [
-    { _id: 1, label: 'Property' },
-    { _id: 2, label: 'General Liability' },
-    { _id: 4, label: 'Auto' },
-    { _id: 5, label: 'Workers Compenstation' },
-    { _id: 6, label: 'Umbrella' },
-]
-
 export const BusinessOperation = ({ formData, change }) => {
 
-  const { businessType, coverages } = formData;
+  const { businessType } = formData;
 
   return (
     <div className="container">
@@ -46,12 +37,11 @@ export const BusinessOperation = ({ formData, change }) => {
             I'm interested in the following coverage(s):
           </label>
           <br />
-
-          {dataList.map((data) =>
+          {formData.coverages.map((coverage) =>
             <div>
               <span className="lmgbi_formEntry">
-                <input className="lmgbi_formValue lmgbi_useNameAttr" key={data._id} type="checkbox" value={data._id}/>
-                {data.label}
+                <input className="lmgbi_formValue lmgbi_useNameAttr" key={coverage.id} type="checkbox" value={coverage.label} />
+                {coverage.label}
               </span>
               <br />
             </div>

@@ -17,7 +17,7 @@ export const AgencyInfo = ({formData, change}) => {
           <br />
           <input id="name-input" type="text"
                  className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
-                 name="agency" value={agencyCode} onChange={change} />
+                 name="agencyCode" value={agencyCode} onChange={change} />
           <br />
           <span className="lmgbi_formAlert" style={{color: 'red', display: 'none '}}>agency required</span>
         </div>
@@ -26,7 +26,6 @@ export const AgencyInfo = ({formData, change}) => {
       {/* producer's mobile */}
       <div className="row">
         <div className="col-sm-5 form-group lmgbi_formEntry">
-          <span className="required-marker"></span>
           <label className="lmbi_formTitle" htmlFor="name-input">
             Producer's Mobile/Cell
           </label>
@@ -35,7 +34,6 @@ export const AgencyInfo = ({formData, change}) => {
                  className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
                  name="mobile" value={mobile} onChange={change} />
           <br />
-          <span className="lmgbi_formAlert" style={{ color: 'red', display: 'none' }}>number required</span>
         </div>
       </div>
       <i>*Acknowledgement of lead submission will be sent via text to the above provided number.</i>
@@ -52,7 +50,7 @@ export const AgencyInfo = ({formData, change}) => {
           <br />
           <input id="name-input" type="text"
                  className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
-                 name="name" value={producerName} onChange={change} />
+                 name="producerName" value={producerName} onChange={change} />
           <br />
           <span className="lmgbi_formAlert" style={{color: 'red', display: 'none '}}>name required</span>
         </div>
@@ -67,7 +65,7 @@ export const AgencyInfo = ({formData, change}) => {
           <br />
           <input id="name-input" type="text"
                  className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
-                 name="email" value={producerEmail} onChange={change} />
+                 name="producerEmail" value={producerEmail} onChange={change} />
           <br />
           <span className="lmgbi_formAlert" style={{color: 'red', display: 'none '}}>email required</span>
         </div>
