@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useForm } from "../hooks/useForm";
 import { useAgtAppoint } from '../hooks/useAgtAppoint';
-import {AgtAppointFormValidation} from './AgtAppointFormValidation'
 import {useState} from 'react'
 
 export const AgtAppointForm = () => {
