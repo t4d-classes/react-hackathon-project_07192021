@@ -35,7 +35,7 @@ export const LeadIntakeAdminTable = ({ intakeData, onDeleteRow }) => {
 }
 
 LeadIntakeAdminTable.propTypes = {
-    regions: PropTypes.arrayOf(PropTypes.shape({
+  intakeData: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       agencyCode: PropTypes.string.isRequired,
       producerName: PropTypes.string.isRequired,
