@@ -230,7 +230,7 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-3 form-group lmgbi_formEntry">
+        <div className="col-md-4 form-group lmgbi_formEntry">
           <label className="lmgbi_formTitle" htmlFor="keyContactFirstName">
             Key Contact First Name:
           </label>
@@ -250,7 +250,7 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
             Contact FirstName required
           </span>
         </div>
-        <div className="col-md-3 form-group lmgbi_formEntry">
+        <div className="col-md-4 form-group lmgbi_formEntry">
           <label className="lmgbi_formTitle" htmlFor="keyContactLastName">
             Key Contact Last Name:
           </label>
@@ -272,7 +272,7 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
             Contact LastName required
           </span>
         </div>
-        <div className="col-md-6 form-group lmgbi_formEntry">
+        <div className="col-md-4 form-group lmgbi_formEntry">
           <label className="lmgbi_formTitle" htmlFor="keyContactTitle">
             Key Contact's Title:
           </label>
