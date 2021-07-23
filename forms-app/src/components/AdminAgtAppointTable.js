@@ -1,25 +1,13 @@
 import PropTypes from 'prop-types';
 
-import { useForm } from '../hooks/useForm';
 import { useAgtAppoint } from '../hooks/useAgtAppoint';
 
 export const AdminAgtAppointTable = () => {
 
-  const { agtAppoints, deleteAgtAppoint } = useAgtAppoint();
-
-  /*
-  const [agtAppointsData, change, resetAdminAgtAppointTable] = useForm({
-    id: '',
-    agencyName: '',
-    city: '',
-    state: '',
-  });
-*/
+  const { agtAppoints, deleteAgtAppoint, appendAgtAppoint } = useAgtAppoint();
 
   const deleteItem = (id) => {
-    deleteAgtAppoint(id).then(() => {
-      //resetAdminAgtAppointTable();
-    });
+    deleteAgtAppoint(id);
   };
 
   return (

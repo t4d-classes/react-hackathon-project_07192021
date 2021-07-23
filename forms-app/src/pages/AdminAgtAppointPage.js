@@ -1,10 +1,6 @@
 import { AdminAgtAppointTable } from "../components/AdminAgtAppointTable";
 
-import { useAgtAppoint } from '../hooks/useAgtAppoint';
-
 export const AdminAgtAppointPage = () => {
-
- // const { agtAppoints, deleteAgtAppoint } = useAgtAppoint();
 
   return (
     <div>
