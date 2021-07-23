@@ -6,12 +6,14 @@ import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
 import { MessageBox } from './components/MessageBox';
 import { MenuBar } from './components/MenuBar';
+import {LeadIntakeTablePage} from "./pages/LeadIntakeTablePage";
 
 const pages = [
   { id: 1, to: "/home", label: "Home", component: HomePage },
   { id: 2, to: "/admin", label: "Admin", component: AdminPage },
   { id: 3, to: "/coverages", label: "Coverages", component: CoveragesPage },
   { id: 4, to: "/regions", label: "Regions", component: RegionsPage },
+  { id: 5, to: "/leadIntakeTable", component: LeadIntakeTablePage}
 ];
 
 export const App = () => {
