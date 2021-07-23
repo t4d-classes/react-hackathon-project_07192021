@@ -3,19 +3,37 @@ import { useForm } from "../hooks/useForm";
 
 export const AgtAppointForm = ({ onSubmitForm }) => {
   const [AgtAppointForm, change, resetAgtAppointForm] = useForm({
-    agencyName: "",
-    streetAddress: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    phoneNumber: "",
-    email: "",
-    keyContactFirstName: "",
-    keyContactLastName: "",
-    keyContactTitle: "",
-    agencyYearsInBusiness: "",
-    agencyStructure: "",
-    agencyWebsiteAddress: "",
+    agencyName: '',
+    streetAddress: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    phoneNumber: '',
+    email: '',
+    keyContactFirstName: '',
+    keyContactLastName: '',
+    keyContactTitle: '',
+    agencyYearsInBusiness: '',
+    agencyStructure: '',
+    agencyWebsiteAddress: '',
+    numberOfAgencyOfficeLocations: '',
+    officeLocations: '',
+    numberOfCommercialLinesProducers: '',
+    numberOfCommercialLinesCSRs: '',
+    totalCommercialLinesAgencyPremium: '',
+    numberOfCommercialLinesAccounts: '',
+    carrier1: '',
+    writtenPremium1: '',
+    lossRatio1: '',
+    carrier2: '',
+    writtenPremium2: '',
+    lossRatio2: '',
+    carrier3: '',
+    writtenPremium3: '',
+    lossRatio3: '',
+    agencySpecialization: '',
+    sizeOfAccounts: '',
+    additionalComments: ''
   });
 
   const submitForm = () => {
@@ -296,7 +314,7 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-6 form-group lmgbi_formEntry">
+        <div className="col-md-4 form-group lmgbi_formEntry">
           <label className="lmgbi_formTitle" htmlFor="agencyYearsInBusiness">
             Agency's Years in Business:
           </label>
@@ -321,7 +339,7 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
           </span>
         </div>
 
-        <div className="col-md-6 form-group lmgbi_formEntry">
+        <div className="col-md-4 form-group lmgbi_formEntry">
           <label className="lmgbi_formTitle" htmlFor="agencyStructure">
             Agency's Structure:
           </label>
@@ -348,9 +366,73 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
             Agency's Structure is required
           </span>
         </div>
-
-
       </div>
+      <div className="row">
+      <div className="col-md-6 form-group lmgbi_formEntry">
+        <label className="lmgbi_formTitle" htmlFor="agencyWebsiteAddress">
+        Agency's Website Address:
+        </label>
+        <span className="required-marker"></span>
+        <br/>
+        <input
+            id="agencyWebsiteAddress"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="agencyWebsiteAddress"
+            value={AgtAppointForm.agencyWebsiteAddress}
+            onChange={change}
+          />
+        <br/>
+        <span className="lmgbi_formAlert" style={{ color: "red", display: "none" }}>Agency Website required</span>
+      </div>
+    </div>
+
+    <div className="row">
+        <div className="col-md-6 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="numberOfAgencyOfficeLocations">
+          Number of Agency Office Locations:
+          </label>
+          <span className="required-marker"></span>
+          <input
+            id="numberOfAgencyOfficeLocations"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="numberOfAgencyOfficeLocations"
+            value={AgtAppointForm.numberOfAgencyOfficeLocations}
+            onChange={change}
+          />
+          <span
+            className="lmgbi_formAlert"
+            style={{ color: "red", display: "none" }}
+          >
+            Number of Agency Office Locations required
+          </span>
+        </div>
+        <div className="col-md-6 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="officeLocations">
+          Office Locations:
+          </label>
+          <span className="required-marker"></span>
+          <br />
+          <input
+            id="officeLocations"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="officeLocations"
+            value={AgtAppointForm.officeLocations}
+            onChange={change}
+          />
+          <br />
+          <span
+            className="lmgbi_formAlert"
+            style={{ color: "red", display: "none" }}
+          >
+            Office Locations required
+          </span>
+        </div>
+      </div>
+
+
 
       <div className="row">
         <button type="button" onClick={submitForm}>
