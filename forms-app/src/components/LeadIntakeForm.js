@@ -134,8 +134,8 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
             leadIntakeForm.coverages = coveragesArray; 
             setcoveragesArray([]);           
         }
-        console.log(coveragesArray)
-        console.log(leadIntakeForm.coverages)
+        //console.log(coveragesArray)
+        //console.log(leadIntakeForm.coverages)
         
         if (leadIntakeForm.coverages.length === 0) {
              errors = {...errorMessage, coverages: true}
