@@ -368,13 +368,13 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
         </div>
       </div>
       <div className="row">
-      <div className="col-md-6 form-group lmgbi_formEntry">
-        <label className="lmgbi_formTitle" htmlFor="agencyWebsiteAddress">
-        Agency's Website Address:
+        <div className="col-md-6 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="agencyWebsiteAddress">
+            Agency's Website Address:
         </label>
-        <span className="required-marker"></span>
-        <br/>
-        <input
+          <span className="required-marker"></span>
+          <br />
+          <input
             id="agencyWebsiteAddress"
             type="textbox"
             className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
@@ -382,15 +382,15 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
             value={AgtAppointForm.agencyWebsiteAddress}
             onChange={change}
           />
-        <br/>
-        <span className="lmgbi_formAlert" style={{ color: "red", display: "none" }}>Agency Website required</span>
+          <br />
+          <span className="lmgbi_formAlert" style={{ color: "red", display: "none" }}>Agency Website required</span>
+        </div>
       </div>
-    </div>
 
-    <div className="row">
+      <div className="row">
         <div className="col-md-6 form-group lmgbi_formEntry">
           <label className="lmgbi_formTitle" htmlFor="numberOfAgencyOfficeLocations">
-          Number of Agency Office Locations:
+            Number of Agency Office Locations:
           </label>
           <span className="required-marker"></span>
           <input
@@ -410,7 +410,7 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
         </div>
         <div className="col-md-6 form-group lmgbi_formEntry">
           <label className="lmgbi_formTitle" htmlFor="officeLocations">
-          Office Locations:
+            Office Locations:
           </label>
           <span className="required-marker"></span>
           <br />
@@ -432,12 +432,229 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
         </div>
       </div>
 
+      <div className="row">
+        <h6>Top 3 Current Commercial Lines Markets (Carriers):</h6>
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="carrier1">
+          Carrier:
+          </label>
+          <span className="required-marker"></span>
+          <input
+            id="carrier1"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="carrier1"
+            value={AgtAppointForm.carrier1}
+            onChange={change}
+          />
+        </div>
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="writtenPremium1">
+          Written Premium:
+          </label>
+          <span className="required-marker"></span>
+          <br />
+          <input
+            id="writtenPremium1"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="writtenPremium1"
+            value={AgtAppointForm.writtenPremium1}
+            onChange={change}
+          />
+        </div>
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="lossRatio1">
+          Loss Ratio %:
+          </label>
+          <span className="required-marker"></span>
+          <br />
+          <input
+            id="lossRatio1"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="lossRatio1"
+            value={AgtAppointForm.lossRatio1}
+            onChange={change}
+          />
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="carrier2">
+          Carrier:
+          </label>
+          <span className="required-marker"></span>
+          <input
+            id="carrier2"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="carrier2"
+            value={AgtAppointForm.carrier2}
+            onChange={change}
+          />
+        </div>
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="writtenPremium2">
+          Written Premium:
+          </label>
+          <span className="required-marker"></span>
+          <br />
+          <input
+            id="writtenPremium2"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="writtenPremium2"
+            value={AgtAppointForm.writtenPremium2}
+            onChange={change}
+          />
+        </div>
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="lossRatio2">
+          Loss Ratio %:
+          </label>
+          <span className="required-marker"></span>
+          <br />
+          <input
+            id="lossRatio2"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="lossRatio2"
+            value={AgtAppointForm.lossRatio2}
+            onChange={change}
+          />
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="carrier3">
+          Carrier:
+          </label>
+          <span className="required-marker"></span>
+          <input
+            id="carrier3"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="carrier3"
+            value={AgtAppointForm.carrier3}
+            onChange={change}
+          />
+        </div>
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="writtenPremium3">
+          Written Premium:
+          </label>
+          <span className="required-marker"></span>
+          <br />
+          <input
+            id="writtenPremium3"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="writtenPremium3"
+            value={AgtAppointForm.writtenPremium3}
+            onChange={change}
+          />
+        </div>
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="lossRatio3">
+          Loss Ratio %:
+          </label>
+          <span className="required-marker"></span>
+          <br />
+          <input
+            id="lossRatio3"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="lossRatio3"
+            value={AgtAppointForm.lossRatio3}
+            onChange={change}
+          />
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-md-6 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="agencySpecialization">
+          Agency specialization in a particular line of business or product:
+          </label>
+          <span className="required-marker"></span>
+          <input
+            id="agencySpecialization"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="agencySpecialization"
+            value={AgtAppointForm.agencySpecialization}
+            onChange={change}
+          />
+          <span
+            className="lmgbi_formAlert"
+            style={{ color: "red", display: "none" }}
+          >
+            Agency specialization required
+          </span>
+        </div>
+        <div className="col-md-4 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="sizeOfAccounts">
+          Size of accounts agency currently writes:
+          </label>
+          <span className="required-marker"></span>
+          <br />
+          <select
+            id="sizeOfAccounts"
+            className="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            name="sizeOfAccounts"
+          >
+            <option>Select One</option>
+            <option value="1">Small</option>
+            <option value="2">Mid-Size</option>
+            <option value="3">Large(1,000+ employees)</option>
+            
+          </select>
+          <br />
+          <span
+            className="lmgbi_formAlert"
+            style={{ color: "red", display: "none" }}
+          >
+            Size of accounts is required
+          </span>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-12 form-group lmgbi_formEntry">
+          <label className="lmgbi_formTitle" htmlFor="additionalComments">
+          Additional Comments:
+          </label>
+          <span className="required-marker"></span>
+          <textarea
+            id="additionalComments"
+            type="textbox"
+            className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
+            rows="6"
+            name="additionalComments"
+            value={AgtAppointForm.additionalComments}
+            onChange={change}
+          />
+          <span
+            className="lmgbi_formAlert"
+            style={{ color: "red", display: "none" }}
+          >
+            Agency specialization required
+          </span>
+        </div>
+        </div>
+
 
 
       <div className="row">
+      <div className="spacing-top-md-lg col-md-6 col-md-offset-5 lmgbi_formEntry">
+      <span className="required-marker"/>
+      Required Fields &nbsp; &nbsp;
         <button type="button" onClick={submitForm}>
           submit
         </button>
+      </div>
       </div>
     </form>
   );
