@@ -3,10 +3,8 @@ import { LeadIntakeAdminTable } from "../components/LeadIntakeAdminTable";
 import { useLeads } from "../hooks/useLeads";
 
 export const AdminPage = () => {
-
   const { leads, deleteLeads } = useLeads();
-  
- return (
+  return (
     <div>
       <header>
         <h1>Admin</h1>
@@ -14,8 +12,9 @@ export const AdminPage = () => {
       <p>Welcome to the admin page</p>
       <li>
         <Link to="/adminAgtAppoint">Agency Appointment Form Data</Link>
+        <Link to="/leadIntakeTable">Lead Intake</Link>
       </li>
-      <LeadIntakeAdminTable intakeData={ leads } onDeleteRow={ deleteLeads }/>
+        <LeadIntakeAdminTable intakeData={ leads } onDeleteRow={ deleteLeads }/>
     </div>
- )
+    )
 };
