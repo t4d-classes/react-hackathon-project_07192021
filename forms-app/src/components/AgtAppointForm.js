@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { useForm } from "../hooks/useForm";
+import { useAgtAppoint } from '../hooks/useAgtAppoint';
 
-export const AgtAppointForm = ({ onSubmitForm }) => {
+export const AgtAppointForm = () => {
+  const { agtAppoints, deleteAgtAppoint, appendAgtAppoint } = useAgtAppoint();
   const [AgtAppointForm, change, resetAgtAppointForm] = useForm({
     agencyName: '',
     streetAddress: '',
@@ -37,7 +39,7 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
   });
 
   const submitForm = () => {
-    onSubmitForm(AgtAppointForm).then(() => {
+    appendAgtAppoint(AgtAppointForm).then(() => {
       resetAgtAppointForm();
     });
 
