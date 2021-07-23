@@ -17,12 +17,25 @@ export const useLeads = () => {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
         })
-          .then(() => fetch('http://localhost:3060/leadIntakeForm'))
-          .then(res => res.json())
-          .then(leads => setLeads(leads));
+            .then(() => fetch('http://localhost:3060/leadIntakeForm'))
+            .then(res => res.json())
+            .then(leads => setLeads(leads));
     };
 
-    return { leads, removeLead };
+    const addLead = (lead) => {
+
+        return fetch('http://localhost:3060/leadIntakeForm', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(lead),
+        })
+            .then(() => fetch('http://localhost:3060/leadIntakeForm'))
+            .then(res => res.json())
+            .then(leads => setLeads(leads));
+
+    };
+
+    return { leads, removeLead, addLead };
 
 
 };
