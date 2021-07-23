@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
 import { LeadIntakeAdminTable } from "../components/LeadIntakeAdminTable";
-import { useLeads } from "../hooks/useLeads";
 
 export const AdminPage = () => {
-
-  const { leads, deleteLeads } = useLeads();
   
  return (
     <div>
@@ -15,7 +12,9 @@ export const AdminPage = () => {
       <li>
         <Link to="/adminAgtAppoint">Agency Appointment Form Data</Link>
       </li>
-      <LeadIntakeAdminTable intakeData={ leads } onDeleteRow={ deleteLeads }/>
+      <li>
+        <Link to="/adminLeadIntake">Lead Intake Form Data</Link>
+      </li>
     </div>
  )
 };

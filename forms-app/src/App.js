@@ -7,6 +7,7 @@ import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
 import { MenuBar } from './components/MenuBar';
 import { AgtAppointPage } from './pages/AgtAppointPage';
+import { AdminLeadIntakePage } from './pages/AdminLeadIntakePage';
 
 const pages = [
   { id: 1, to: "/home", label: "Home", component: HomePage },
@@ -37,6 +38,9 @@ export const App = () => {
                 <Route key={page.id} path={page.to} component={page.component} />)}
               <Route path="/adminAgtAppoint">
                 <AdminAgtAppointPage />
+              </Route>
+              <Route path="/adminLeadIntake">
+                <AdminLeadIntakePage/>
               </Route>
               <Route path="/" exact>
                 <HomePage />
