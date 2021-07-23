@@ -6,6 +6,8 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
 
     const [errorMessage, setErrorMessage] = useState('');
 
+    const coveragesArray = [];
+
     const [leadIntakeForm, change, resetLeadIntakeForm] = useForm(
         {
             fullName: '',
@@ -121,6 +123,10 @@ onSubmitForm(leadIntakeForm).then(() => {
     resetLeadIntakeForm();
 });
     };
+
+const handleCheckboxChange = (data) => {
+        coveragesArray.push(data.target.value);
+}
 
 return (
     <div className="container-fluid">
@@ -309,15 +315,15 @@ return (
                         <span className="required-marker"></span>
                         <label>I'm interested in the following coverage(s)&#58;</label><br />
                         <span className="lmgbi_formEntry"><span className="lmgbi_formTitle" style={{ display: 'none' }}>00N3n000003nLZH​</span>
-                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="property" type="checkbox" data-name="00N3n000003nLZH​" data-field-name="00N3n000003nLZH​" value="1" /></span> &#160;Property
+                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="property" type="checkbox" data-name="00N3n000003nLZH​" data-field-name="00N3n000003nLZH​" value="Property" onChange={handleCheckboxChange}/></span> &#160;Property
                         <br /><span className="lmgbi_formEntry"><span className="lmgbi_formTitle" style={{ display: 'none' }}>00N3n000003nLZE</span>
-                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="generalliability" type="checkbox" data-name="00N3n000003nLZE​" data-field-name="00N3n000003nLZE" value="1" /> </span> &#160;General Liability
+                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="generalliability" type="checkbox" data-name="00N3n000003nLZE​" data-field-name="00N3n000003nLZE" value="General Liability" onChange={handleCheckboxChange}/> </span> &#160;General Liability
                         <br /><span className="lmgbi_formEntry"><span className="lmgbi_formTitle" style={{ display: 'none' }}>00N3n000003nLZB</span>
-                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="auto" type="checkbox" data-name="00N3n000003nLZB​​​" data-field-name="00N3n000003nLZB​​​" value="1" /> </span> &#160;Auto
+                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="auto" type="checkbox" data-name="00N3n000003nLZB​​​" data-field-name="00N3n000003nLZB​​​" value="Auto" onChange={handleCheckboxChange}/> </span> &#160;Auto
                         <br /><span className="lmgbi_formEntry"><span className="lmgbi_formTitle" style={{ display: 'none' }}>00N3n000003nLZK</span>
-                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="workerscompensation" type="checkbox" data-name="00N3n000003nLZK" data-field-name="00N3n000003nLZK" value="1" /> </span> &#160;Workers Compensation
+                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="workerscompensation" type="checkbox" data-name="00N3n000003nLZK" data-field-name="00N3n000003nLZK" value="Workers Compensation" onChange={handleCheckboxChange}/> </span> &#160;Workers Compensation
                         <br /><span className="lmgbi_formEntry"><span className="lmgbi_formTitle" style={{ display: 'none' }}>00N3n000003nLZI</span>
-                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="umbrella" type="checkbox" data-name="00N3n000003nLZI" data-field-name="00N3n000003nLZI" value="1" /> </span> &#160;Umbrella
+                            <input className="lmgbi_formValue lmgbi_useNameAttr" id="umbrella" type="checkbox" data-name="00N3n000003nLZI" data-field-name="00N3n000003nLZI" value="Umbrella" onChange={handleCheckboxChange}/> </span> &#160;Umbrella
                         <br />
                         <span id="lmgbi_productAlert" style={{ color: 'red', display: 'none' }}> I'm interested in the following coverage(s) required </span>
                     </div>
