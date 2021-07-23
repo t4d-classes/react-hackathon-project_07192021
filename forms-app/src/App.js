@@ -1,22 +1,27 @@
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
+import { AdminAgtAppointPage } from './pages/AdminAgtAppointPage';
+import { LeadIntakePage } from './pages/LeadIntakePage';
 import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
 import { MessageBox } from './components/MessageBox';
 import { MenuBar } from './components/MenuBar';
 import {LeadIntakeTablePage1} from "./pages/LeadIntakeTablePage1";
 import { LeadIntakePage1 } from './pages/LeadIntakePage1';
+import {AgtAppointPage} from "./pages/AgtAppointPage";
 
 const pages = [
   { id: 1, to: "/home", label: "Home", component: HomePage },
-  { id: 2, to: "/admin", label: "Admin", component: AdminPage },
+  { id: 2, to: "/leadintake", label: "Lead Intake", component: LeadIntakePage },
   { id: 3, to: "/coverages", label: "Coverages", component: CoveragesPage },
   { id: 4, to: "/regions", label: "Regions", component: RegionsPage },
   { id: 5, to: "/leadIntakeTable", component: LeadIntakeTablePage1},
   { id: 6, to: "/leadIntakeFormOne", label: "Small Commercial Lead Intake Form", component: LeadIntakePage1 },
-]
+  { id: 7, to: "/appoinments", label: "Agent Appointments", component: AgtAppointPage },
+  { id: 8, to: "/admin", label: "Admin", component: AdminPage },
+];
+
 export const App = () => {
   return (
     <Router>
@@ -29,11 +34,15 @@ export const App = () => {
           </div>
           <MenuBar menuItems={pages} />
         </header>
+
         <div className="row">
-          <main id="content" className="col-md-8">
+          <main id="content" className="col-md-12">
             <Switch>
               {pages.map(page =>
                 <Route key={page.id} path={page.to} component={page.component} />)}
+              <Route path="/adminAgtAppoint">
+                <AdminAgtAppointPage />
+              </Route>
               <Route path="/" exact>
                 <HomePage />
               </Route>
