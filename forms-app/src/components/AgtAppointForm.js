@@ -45,66 +45,66 @@ export const AgtAppointForm = () => {
 
     if (AgtAppointForm.agencyName.length === 0) {
       errors.push("Agency name is required.");
-      
+
     }
     if (AgtAppointForm.streetAddress.length === 0) {
       errors.push("Street address is required.");
-        
+
       }
     if (AgtAppointForm.city.length === 0) {
       errors.push("City is required.");
     }
     if (AgtAppointForm.state.length === 0) {
       errors.push("State is required.");
-        
+
       }
     if (AgtAppointForm.zipCode.length === 0) {
       errors.push("Zipcode is required.");
-   
+
       }
     if (AgtAppointForm.phoneNumber.length === 0) {
       errors.push("Phone number is required.");
-    
+
     }
     if (AgtAppointForm.email.length === 0) {
       errors.push("Email is required.");
-        
+
     }
     if (AgtAppointForm.keyContactFirstName.length === 0) {
       errors.push("Key contact first name is required.");
-        
+
     }
     if (AgtAppointForm.keyContactLastName.length === 0) {
       errors.push("Key contact last name is required.");
-    
+
     }
     if (AgtAppointForm.keyContactTitle.length === 0) {
       errors.push("Key contact title is required.");
-        
+
     }
     if (AgtAppointForm.agencyYearsInBusiness.length === 0) {
       errors.push("Agency years in business is required.");
- 
+
     }
     if (AgtAppointForm.agencyStructure.length === 0) {
       errors.push("Agency structure is required.");
-   
+
     }
     if (AgtAppointForm.agencyWebsiteAddress.length === 0) {
       errors.push("Agency website address is required.");
-     
+
     }
     if (AgtAppointForm.numberOfAgencyOfficeLocations.length === 0) {
       errors.push("Number of agency office locations is required.");
-       
+
     }
     if (AgtAppointForm.officeLocations.length === 0) {
       errors.push("Office locations are required.");
-    
+
     }
     if (AgtAppointForm.numberOfCommercialLinesProducers.length === 0) {
       errors.push("Number of commercial line producers is required.");
-        
+
     }
     if (AgtAppointForm.numberOfCommercialLinesCSRs.length === 0) {
       errors.push("Number of commercial line CSRs is required.");
@@ -112,20 +112,20 @@ export const AgtAppointForm = () => {
     }
     if (AgtAppointForm.totalCommercialLinesAgencyPremium.length === 0) {
       errors.push("Total commercial lines  agency premium is required.");
- 
+
     }
     if (AgtAppointForm.numberOfCommercialLinesAccounts.length === 0) {
       errors.push("Number of commercial lines accounts is required.");
-       
+
     }
-    
+
     if (AgtAppointForm.agencySpecialization.length === 0) {
       errors.push("Agency specialization is required.");
-   
+
     }
     if (AgtAppointForm.sizeOfAccounts.length === 0) {
       errors.push("Size of accounts is required.");
-    
+
     }
     if(errors){
         setErrorMessages(errors)
@@ -528,11 +528,11 @@ export const AgtAppointForm = () => {
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 form-group form-inline lmgbi_formEntry"> 
+        <div class="col-md-6 form-group form-inline lmgbi_formEntry">
             <label class="lmgbi_formTitle" htmlFor="numberOfCommercialLinesProducers">
               Number of Commercial Lines Producers
               </label>
-            <span class="required-marker"></span> 
+            <span class="required-marker"></span>
             <br/>
             <select name="numberOfCommercialLinesProducers" id="numberOfCommercialLinesProducers" class="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" >
               <option>Select One</option>
@@ -540,62 +540,62 @@ export const AgtAppointForm = () => {
               <option value="6-10">6-10</option>
               <option value="11-30">11-30</option>
               <option value="More than 30">More than 30</option>
-            </select> 
-            <br/> 
-            <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>Number of Commercial Lines Producers required</span> 
+            </select>
+            <br/>
+            <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>Number of Commercial Lines Producers required</span>
         </div>
-        <div class="col-md-6 form-group form-inline lmgbi_formEntry"> 
-            <label class="lmgbi_formTitle" htmlFor="numberOfCommercialLinesCSRs">Number of Commercial Lines CSRs</label> 
-            <span class="required-marker"></span> 
+        <div class="col-md-6 form-group form-inline lmgbi_formEntry">
+            <label class="lmgbi_formTitle" htmlFor="numberOfCommercialLinesCSRs">Number of Commercial Lines CSRs</label>
+            <span class="required-marker"></span>
             <br/>
             <select id="numberOfCommercialLinesCSRs" name="numberOfCommercialLinesCSRs" class="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr">
-              <option>Select One</option>               
-              <option value="0">0</option>               
-              <option value="1-5">1-5</option>               
-              <option value="6-10">6-10</option>               
-              <option value="11-30">11-30</option>               
-              <option value="More than 30">More than 30</option>                
-            </select> 
-            <br/> 
-            <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>Number of Commercial Lines CSRs required</span> 
+              <option>Select One</option>
+              <option value="0">0</option>
+              <option value="1-5">1-5</option>
+              <option value="6-10">6-10</option>
+              <option value="11-30">11-30</option>
+              <option value="More than 30">More than 30</option>
+            </select>
+            <br/>
+            <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>Number of Commercial Lines CSRs required</span>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 form-group form-inline lmgbi_formEntry"> 
+        <div class="col-md-6 form-group form-inline lmgbi_formEntry">
             <label class="lmgbi_formTitle" htmlFor="totalCommercialLinesAgencyPremium">
               Total Commercial Lines Agency Premium
               </label>
-            <span class="required-marker"></span>  
+            <span class="required-marker"></span>
             <br/>
             <select id="totalCommercialLinesAgencyPremium" name="totalCommercialLinesAgencyPremium" class="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" >
               <option>Select One</option>
               <option value="Less than $100,000">Less than $100,000</option>
               <option value="$100,000 to $1m">$100,000 to 1m</option>
               <option value="$1m to $5m">$1m to $5m</option>
-              <option value="Greater than $5m">Greater than $5m</option> 
-            </select> 
-            <br/> 
+              <option value="Greater than $5m">Greater than $5m</option>
+            </select>
+            <br/>
             <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>
               Total Commercial Lines Agency Premium required
-            </span> 
+            </span>
         </div>
-        <div class="col-md-6 form-group form-inline lmgbi_formEntry"> 
+        <div class="col-md-6 form-group form-inline lmgbi_formEntry">
             <label class="lmgbi_formTitle" htmlFor="numberOfCommercialLinesAccounts">
               Number of Commercial Lines Accounts
             </label>
-            <span class="required-marker"></span> 
+            <span class="required-marker"></span>
             <br/>
             <select id="numberOfCommercialLinesAccounts" name="numberOfCommercialLinesAccounts" class="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" >
               <option>Select One</option>
               <option value="1-5">1-5</option>
               <option value="6-10">6-10</option>
               <option value="11-50">11-50</option>
-              <option value="Greater than 50">Greater than 50</option> 
-            </select> 
-            <br/> 
+              <option value="Greater than 50">Greater than 50</option>
+            </select>
+            <br/>
             <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>
               Number of Commercial Lines Accounts required
-            </span> 
+            </span>
         </div>
       </div>
       <div className="row">
@@ -776,7 +776,7 @@ export const AgtAppointForm = () => {
             <option value="1">Small</option>
             <option value="2">Mid-Size</option>
             <option value="3">Large(1,000+ employees)</option>
-            
+
           </select>
           <br />
           <span
