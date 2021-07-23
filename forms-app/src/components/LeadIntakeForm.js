@@ -39,7 +39,8 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
         { id: 5, label: 'Umbrella' }
     ]
     const submitForm = () => {
-
+        
+        leadIntakeForm.coverages = coveragesArray;
 
         if (leadIntakeForm.fullName.length === 0) {
             setErrorMessage("Liberty Rep Full Name required");
