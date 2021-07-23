@@ -1,7 +1,7 @@
-import { LeadIntakeTable } from "../components/LeadIntakeTable";
+import { LeadIntakeTable1 } from "../components/LeadIntakeTable1";
 import {useLeads} from "../hooks/useLeads";
 
-export const LeadIntakeTablePage = () => {
+export const LeadIntakeTablePage1 = () => {
 
   const { leads, removeLead } = useLeads();
 
@@ -11,7 +11,7 @@ export const LeadIntakeTablePage = () => {
         <h1>Small Commercial Lead Intake Table</h1>
       </header>
       <p>Here is a list of the lead intakes!</p>
-      <LeadIntakeTable leadIntakeData={leads} deleteRow={removeLead}/>
+      <LeadIntakeTable1 leadIntakeData={leads} deleteRow={removeLead}/>
     </div>
   );
 

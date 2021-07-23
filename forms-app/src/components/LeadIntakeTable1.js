@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const LeadIntakeTable = ({ leadIntakeData, deleteRow }) => {
+export const LeadIntakeTable1 = ({ leadIntakeData, deleteRow }) => {
 
   return (
     <table className="table">
@@ -32,7 +32,7 @@ export const LeadIntakeTable = ({ leadIntakeData, deleteRow }) => {
   );
 };
 
-LeadIntakeTable.propTypes = {
+LeadIntakeTable1.propTypes = {
   leadIntakeData: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     fullName: PropTypes.string.isRequired,
@@ -55,6 +55,6 @@ LeadIntakeTable.propTypes = {
   })).isRequired,
 };
 
-LeadIntakeTable.defaultProps = {
+LeadIntakeTable1.defaultProps = {
   leadIntakeData: [],
 };

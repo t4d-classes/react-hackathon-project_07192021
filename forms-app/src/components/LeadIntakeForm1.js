@@ -2,7 +2,7 @@ import PropTypes, {object} from "prop-types";
 import { useState } from 'react';
 import { useForm } from "../hooks/useForm";
 
-export const LeadIntakeForm = ({ onSubmitForm }) => {
+export const LeadIntakeForm1 = ({ onSubmitForm }) => {
 
     const [errorMessage, setErrorMessage] = useState({
         fullName: false,
@@ -416,6 +416,6 @@ return (
 );
 };
 
-LeadIntakeForm.propTypes = {
+LeadIntakeForm1.propTypes = {
     onSubmitForm: PropTypes.func.isRequired,
 };

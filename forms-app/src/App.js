@@ -6,16 +6,16 @@ import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
 import { MessageBox } from './components/MessageBox';
 import { MenuBar } from './components/MenuBar';
-import {LeadIntakeTablePage} from "./pages/LeadIntakeTablePage";
-import { LeadIntakePage } from './pages/LeadIntakePage';
+import {LeadIntakeTablePage1} from "./pages/LeadIntakeTablePage1";
+import { LeadIntakePage1 } from './pages/LeadIntakePage1';
 
 const pages = [
   { id: 1, to: "/home", label: "Home", component: HomePage },
   { id: 2, to: "/admin", label: "Admin", component: AdminPage },
   { id: 3, to: "/coverages", label: "Coverages", component: CoveragesPage },
   { id: 4, to: "/regions", label: "Regions", component: RegionsPage },
-  { id: 5, to: "/leadIntakeTable", component: LeadIntakeTablePage},
-  { id: 6, to: "/leadIntakeForm", label: "Lead Intake Form", component: LeadIntakePage },  
+  { id: 5, to: "/leadIntakeTable", component: LeadIntakeTablePage1},
+  { id: 6, to: "/leadIntakeFormOne", label: "Small Commercial Lead Intake Form", component: LeadIntakePage1 },
 ]
 export const App = () => {
   return (
