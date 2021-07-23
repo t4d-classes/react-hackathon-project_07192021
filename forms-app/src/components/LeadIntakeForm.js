@@ -25,7 +25,8 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
         formType: false,
     });
 
-    const coveragesArray = [];
+ 
+    const [coveragesArray, setcoveragesArray] = useState([])
 
     const [leadIntakeForm, change, resetLeadIntakeForm] = useForm(
         {
@@ -57,9 +58,30 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
         { id: 4, label: 'Workers Compensation' },
         { id: 5, label: 'Umbrella' }
     ]
-    const submitForm = () => {
+    const submitForm = () => {      
         
-        leadIntakeForm.coverages = coveragesArray;
+        
+
+        let errors = {
+            fullName: false,
+            nNumber: false,
+            agencyEmail: false,
+            agencyPhoneNumber: false,
+            insuredName: false,
+            firstName: false,
+            lastName: false,
+            customerPhoneNumber: false,
+            streetAddress: false,
+            city: false,
+            state: false,
+            zipCode: false,
+            customerEmailAddress: false,
+            descBusinessOperation: false,
+            typeOfQuote: false,
+            coverages: false,
+            blscRepName: false,
+            formType: false,
+        }
 
         if (leadIntakeForm.fullName.length === 0) {
             errors.fullName = true
@@ -107,9 +129,17 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
         if (leadIntakeForm.typeOfQuote.length === 0) {
             errors.typeOfQuote = true
         }
-        // if (leadIntakeForm.coverages.length === 0) {
-        //     errors = {...errorMessage, coverages: true}
-        // }
+
+        if (coveragesArray.length !== 0) {
+            leadIntakeForm.coverages = coveragesArray; 
+            setcoveragesArray([]);           
+        }
+        console.log(coveragesArray)
+        console.log(leadIntakeForm.coverages)
+        
+        if (leadIntakeForm.coverages.length === 0) {
+             errors = {...errorMessage, coverages: true}
+        }
         // if (leadIntakeForm.blscRepName.length === 0) {
         //     errors = {...errorMessage, blscRepName: true}
         // }
@@ -120,7 +150,16 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
         console.log(errors)
         setErrorMessage(errors)
         for (const property in errors) {
-            if (errors[property] === true) return;
+            if (errors[property] === true) {
+                return;
+            }else{
+                console.log('remove checkboxes')
+                document.querySelectorAll('input[type="checkbox"]')
+                .forEach(box => box.checked = false);
+
+                document.querySelectorAll('input[type="radio"]')
+                .forEach(radio => radio.checked = false);
+            }                       
         }
 
 
@@ -146,15 +185,22 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
           formType: false,
       }
     );
+
+    
     onSubmitForm(leadIntakeForm).then(() => {
-        console.log("submittings")
+        console.log("submittings")        
         resetLeadIntakeForm();
     });
+    
 };
 
 const handleCheckboxChange = (data) => {
+    //console.log(data.target.value)
+    if (data.target.checked) {
         coveragesArray.push(data.target.value);
+    }       
 }
+
 
 return (
     <div className="container-fluid">
