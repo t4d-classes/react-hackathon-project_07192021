@@ -40,6 +40,7 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
     onSubmitForm(AgtAppointForm).then(() => {
       resetAgtAppointForm();
     });
+
   };
 
   return (
@@ -431,7 +432,77 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
           </span>
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-md-6 form-group form-inline lmgbi_formEntry"> 
+            <label class="lmgbi_formTitle" htmlFor="numberOfCommercialLinesProducers">
+              Number of Commercial Lines Producers
+              </label>
+            <span class="required-marker"></span> 
+            <br/>
+            <select name="numberOfCommercialLinesProducers" id="numberOfCommercialLinesProducers" class="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" >
+              <option>Select One</option>
+              <option value="1-5">1-5</option>
+              <option value="6-10">6-10</option>
+              <option value="11-30">11-30</option>
+              <option value="More than 30">More than 30</option>
+            </select> 
+            <br/> 
+            <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>Number of Commercial Lines Producers required</span> 
+        </div>
+        <div class="col-md-6 form-group form-inline lmgbi_formEntry"> 
+            <label class="lmgbi_formTitle" htmlFor="numberOfCommercialLinesCSRs">Number of Commercial Lines CSRs</label> 
+            <span class="required-marker"></span> 
+            <br/>
+            <select id="numberOfCommercialLinesCSRs" name="numberOfCommercialLinesCSRs" class="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr">
+              <option>Select One</option>               
+              <option value="0">0</option>               
+              <option value="1-5">1-5</option>               
+              <option value="6-10">6-10</option>               
+              <option value="11-30">11-30</option>               
+              <option value="More than 30">More than 30</option>                
+            </select> 
+            <br/> 
+            <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>Number of Commercial Lines CSRs required</span> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 form-group form-inline lmgbi_formEntry"> 
+            <label class="lmgbi_formTitle" htmlFor="totalCommercialLinesAgencyPremium">
+              Total Commercial Lines Agency Premium
+              </label>
+            <span class="required-marker"></span>  
+            <br/>
+            <select id="totalCommercialLinesAgencyPremium" name="totalCommercialLinesAgencyPremium" class="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" >
+              <option>Select One</option>
+              <option value="Less than $100,000">Less than $100,000</option>
+              <option value="$100,000 to $1m">$100,000 to 1m</option>
+              <option value="$1m to $5m">$1m to $5m</option>
+              <option value="Greater than $5m">Greater than $5m</option> 
+            </select> 
+            <br/> 
+            <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>
+              Total Commercial Lines Agency Premium required
+            </span> 
+        </div>
+        <div class="col-md-6 form-group form-inline lmgbi_formEntry"> 
+            <label class="lmgbi_formTitle" htmlFor="numberOfCommercialLinesAccounts">
+              Number of Commercial Lines Accounts
+            </label>
+            <span class="required-marker"></span> 
+            <br/>
+            <select id="numberOfCommercialLinesAccounts" name="numberOfCommercialLinesAccounts" class="form-control control-select lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" >
+              <option>Select One</option>
+              <option value="1-5">1-5</option>
+              <option value="6-10">6-10</option>
+              <option value="11-50">11-50</option>
+              <option value="Greater than 50">Greater than 50</option> 
+            </select> 
+            <br/> 
+            <span class="lmgbi_formAlert" style={{color:'red', display: 'none'}}>
+              Number of Commercial Lines Accounts required
+            </span> 
+        </div>
+      </div>
       <div className="row">
         <h6>Top 3 Current Commercial Lines Markets (Carriers):</h6>
         <div className="col-md-4 form-group lmgbi_formEntry">
@@ -645,15 +716,12 @@ export const AgtAppointForm = ({ onSubmitForm }) => {
         </div>
         </div>
 
-
-
-      <div className="row">
-      <div className="spacing-top-md-lg col-md-6 col-md-offset-5 lmgbi_formEntry">
-      <span className="required-marker"/>
-      Required Fields &nbsp; &nbsp;
-        <button type="button" onClick={submitForm}>
-          submit
-        </button>
+    <div class="row">
+      <div class="form-actions spacing-top-md-lg col-md-6 col-md-offset-5">
+      <span class="required-marker"></span>
+        Required Fields &nbsp; &nbsp;
+      <input class="input-submit btn btn-primary" id="lmgbi_formSubmitBtn" type="button"
+          value="Submit" onClick={()=>{submitForm()}}/>
       </div>
       </div>
     </form>
