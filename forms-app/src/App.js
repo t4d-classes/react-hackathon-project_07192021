@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import { HomePage } from './pages/HomePage';
 import { AdminPage } from './pages/AdminPage';
+import { AdminAgtAppointPage } from './pages/AdminAgtAppointPage';
 import { CoveragesPage } from './pages/CoveragesPage';
 import { RegionsPage } from './pages/RegionsPage';
 import { MessageBox } from './components/MessageBox';
@@ -33,6 +34,9 @@ export const App = () => {
             <Switch>
               {pages.map(page =>
                 <Route key={page.id} path={page.to} component={page.component} />)}
+              <Route path="/adminAgtAppoint">
+                <AdminAgtAppointPage />
+              </Route>
               <Route path="/" exact>
                 <HomePage />
               </Route>
