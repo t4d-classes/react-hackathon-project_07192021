@@ -2,9 +2,9 @@ import { LeadIntakeAdminTable } from "../components/LeadIntakeAdminTable";
 
 export const AdminPage = () => {
 
-  //const { intakeData, appendIntakeData } = useLeadIntake();
+  //const { iData, appendIntakeData } = useLeadIntake();
   // onDeleteRow={}
-  // <LeadIntakeAdminTable />
+  // <LeadIntakeAdminTable intakeData={ iData } onDeleteRow={ appendIntakeData }/>
 
   /* Example of delete
    return fetch('http://localhost:3060/leadintake/' + intakeData.id, {
