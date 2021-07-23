@@ -10,7 +10,7 @@ export const LeadIntakeTable = ({ leadIntakeData, deleteRow }) => {
         <th>Agency Email</th>
         <th>Customer Name</th>
         <th>Type of Quote</th>
-        <th>Coverage(s)</th>
+        {/*<th>Coverage(s)</th>*/}
         <th></th>
       </tr>
       </thead>
@@ -20,11 +20,11 @@ export const LeadIntakeTable = ({ leadIntakeData, deleteRow }) => {
         <td>{leadIntakeData.agencyEmail}</td>
         <td>{leadIntakeData.firstName} {leadIntakeData.lastName}</td>
         <td>{leadIntakeData.typeOfQuote}</td>
-        <td>
-          <ul>
-            {leadIntakeData.coverages.map(coverage => <li key={coverage}>{coverage}</li>)}
-          </ul>
-        </td>
+        {/*<td>*/}
+        {/*  <ul>*/}
+        {/*    {leadIntakeData.coverages.map(coverage => <li key={coverage}>{coverage}</li>)}*/}
+        {/*  </ul>*/}
+        {/*</td>*/}
         <td><button type="button" onClick={deleteRow} id={leadIntakeData.id}>Delete</button></td>
       </tr>)}
       </tbody>
