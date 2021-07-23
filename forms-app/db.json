@@ -504,7 +504,6 @@
       ]
     }
   ],
-<<<<<<< HEAD
   "leadIntakeForm1": [
     {
       "id": 1,
@@ -576,9 +575,6 @@
       "blscRepName": "Patty",
       "formType": "Call NOT transferred to BLSC. I would like the first available Business Lines sales representative to contact my customer."
     }
-  ]
-}
-=======
+  ],
   "leads": []
 }
->>>>>>> main

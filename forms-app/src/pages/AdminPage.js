@@ -11,7 +11,11 @@ export const AdminPage = () => {
       <p>Welcome to the admin page</p>
       <li>
         <Link to="/adminAgtAppoint">Agency Appointment Form Data</Link>
+      </li>
+      <li>
         <Link to="/leadIntakeTable">Lead Intake</Link>
+      </li>
+      <li>
         <Link to="/adminLeadIntake">Lead Intake Form Data</Link>
       </li>
     </div>

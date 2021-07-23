@@ -38,7 +38,7 @@ export const App = () => {
         </header>
 
         <div className="row">
-          <main id="content" className="col-md-12">
+          <main id="content" className="col-md-8">
             <Switch>
               {pages.map(page =>
                 <Route key={page.id} path={page.to} component={page.component} />)}
