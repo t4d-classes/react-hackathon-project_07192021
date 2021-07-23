@@ -86,8 +86,8 @@ export const ProspectiveCustomer = ({ formData, change }) => {
           <label className="lmgbi_formTitle">State:</label>
           <br />
           <select className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
-                  name="state" value={state} onChange={change}>
-            <option disabled="disabled" selected="selected">--None--</option>
+                  name="state" value={state} onChange={change} selected="selected">
+            <option disabled="disabled" >--None--</option>
             <option value="AK|West">AK</option>
             <option value="AL|South">AL</option>
             <option value="AR|Central">AR</option>

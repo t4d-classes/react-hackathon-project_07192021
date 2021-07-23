@@ -24,5 +24,16 @@ export const useLeads = () => {
       .then(leads => setLeads(leads))
   }
 
-  return { leads, appendLeads };
+  const deleteLeads = (lead) => {
+    return fetch(URL + 'leads/' + lead.id, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(lead),
+    })
+      .then(() => fetch(URL + 'leads/'))
+      .then(res => res.json())
+      .then(lead => setLeads(lead))
+  }
+
+  return { leads, appendLeads, deleteLeads };
 }

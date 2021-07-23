@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import PropTypes from "prop-types";
 
-import { useForm } from "../hooks/useForm";
-
-import { useChecklist } from 'react-checklist';
-
 export const BusinessOperation = ({ formData, change }) => {
 
   const { businessType } = formData;
@@ -38,9 +34,9 @@ export const BusinessOperation = ({ formData, change }) => {
           </label>
           <br />
           {formData.coverages.map((coverage) =>
-            <div>
+            <div key={coverage.id}>
               <span className="lmgbi_formEntry">
-                <input className="lmgbi_formValue lmgbi_useNameAttr" key={coverage.id} type="checkbox" value={coverage.label} />
+                <input className="lmgbi_formValue lmgbi_useNameAttr" key={coverage.label} type="checkbox" value={coverage.label} />
                 {coverage.label}
               </span>
               <br />
@@ -50,8 +46,4 @@ export const BusinessOperation = ({ formData, change }) => {
       </div>
     </div>
   );
-};
-
-BusinessOperation.propTypes = {
-    onSubmitForm: PropTypes.func.isRequired,
 };

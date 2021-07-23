@@ -1,5 +1,4 @@
 import { useSmallBusinessData } from "../hooks/useSmallBusinessData";
-import { useBusiness } from "../hooks/useBusiness";
 import { SmallBusinessGuide } from "../components/SmallBusinessGuide";
 import { LeadIntakeForm } from "../components/LeadIntakeForm";
 
@@ -8,9 +7,8 @@ import { useLeads } from "../hooks/useLeads";
 export const LeadIntakePage = () => {
 
   const { smallBusinessData } = useSmallBusinessData();
-  const { appendBusiness } = useBusiness();
 
-  const { leads, appendLeads } = useLeads();
+  const { appendLeads } = useLeads();
 
   return (
     <div className="container-fluid">

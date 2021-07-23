@@ -1,21 +1,10 @@
 import { LeadIntakeAdminTable } from "../components/LeadIntakeAdminTable";
+import { useLeads } from "../hooks/useLeads";
 
 export const AdminPage = () => {
 
-  //const { iData, appendIntakeData } = useLeadIntake();
-  // onDeleteRow={}
-  // <LeadIntakeAdminTable intakeData={ iData } onDeleteRow={ appendIntakeData }/>
-
-  /* Example of delete
-   return fetch('http://localhost:3060/leadintake/' + intakeData.id, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(intakeData),
-    })
-      .then(() => fetch('http://localhost:3060/leadintake'))
-      .then(res => res.json())
-      .then(intakeData => setCoverages(intakeData));
-  */
+  const { leads, deleteLeads } = useLeads();
+  
  return (
     <div>
       <header>
@@ -23,7 +12,7 @@ export const AdminPage = () => {
       </header>
       <p>Welcome to the admin page</p>
 
-      <LeadIntakeAdminTable />
+      <LeadIntakeAdminTable intakeData={ leads } onDeleteRow={ deleteLeads }/>
     </div>
  )
 };
