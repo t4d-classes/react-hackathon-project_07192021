@@ -24,7 +24,21 @@ export const useAgtAppoint = () => {
 
   };
 
-  return { agtAppoints, deleteAgtAppoint };
+    const appendAgtAppoint = (agencyAppointmentRequest) => {
+
+      return fetch('http://localhost:3060/agencyAppointmentRequest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(agencyAppointmentRequest),
+      })
+        .then(() => fetch('http://localhost:3060/agencyAppointmentRequest'))
+        .then(res => res.json())
+        .then(agencyAppointment => setAgtAppoints(agencyAppointment));
+
+    };
+
+
+  return { agtAppoints, deleteAgtAppoint, appendAgtAppoint };
 
 
 };
