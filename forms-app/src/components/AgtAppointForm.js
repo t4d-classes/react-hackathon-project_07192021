@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import { useForm } from "../hooks/useForm";
 import { useAgtAppoint } from '../hooks/useAgtAppoint';
+import {AgtAppointFormValidation} from './AgtAppointFormValidation'
+import {useState} from 'react'
 
 export const AgtAppointForm = () => {
   const { agtAppoints, deleteAgtAppoint, appendAgtAppoint } = useAgtAppoint();
+  const [errorMessages, setErrorMessages] = useState([]);
   const [AgtAppointForm, change, resetAgtAppointForm] = useForm({
     agencyName: '',
     streetAddress: '',
@@ -39,6 +42,97 @@ export const AgtAppointForm = () => {
   });
 
   const submitForm = () => {
+    let errors = []
+
+    if (AgtAppointForm.agencyName.length === 0) {
+      errors.push("Agency name is required.");
+      
+    }
+    if (AgtAppointForm.streetAddress.length === 0) {
+      errors.push("Street address is required.");
+        
+      }
+    if (AgtAppointForm.city.length === 0) {
+      errors.push("City is required.");
+    }
+    if (AgtAppointForm.state.length === 0) {
+      errors.push("State is required.");
+        
+      }
+    if (AgtAppointForm.zipCode.length === 0) {
+      errors.push("Zipcode is required.");
+   
+      }
+    if (AgtAppointForm.phoneNumber.length === 0) {
+      errors.push("Phone number is required.");
+    
+    }
+    if (AgtAppointForm.email.length === 0) {
+      errors.push("Email is required.");
+        
+    }
+    if (AgtAppointForm.keyContactFirstName.length === 0) {
+      errors.push("Key contact first name is required.");
+        
+    }
+    if (AgtAppointForm.keyContactLastName.length === 0) {
+      errors.push("Key contact last name is required.");
+    
+    }
+    if (AgtAppointForm.keyContactTitle.length === 0) {
+      errors.push("Key contact title is required.");
+        
+    }
+    if (AgtAppointForm.agencyYearsInBusiness.length === 0) {
+      errors.push("Agency years in business is required.");
+ 
+    }
+    if (AgtAppointForm.agencyStructure.length === 0) {
+      errors.push("Agency structure is required.");
+   
+    }
+    if (AgtAppointForm.agencyWebsiteAddress.length === 0) {
+      errors.push("Agency website address is required.");
+     
+    }
+    if (AgtAppointForm.numberOfAgencyOfficeLocations.length === 0) {
+      errors.push("Number of agency office locations is required.");
+       
+    }
+    if (AgtAppointForm.officeLocations.length === 0) {
+      errors.push("Office locations are required.");
+    
+    }
+    if (AgtAppointForm.numberOfCommercialLinesProducers.length === 0) {
+      errors.push("Number of commercial line producers is required.");
+        
+    }
+    if (AgtAppointForm.numberOfCommercialLinesCSRs.length === 0) {
+      errors.push("Number of commercial line CSRs is required.");
+
+    }
+    if (AgtAppointForm.totalCommercialLinesAgencyPremium.length === 0) {
+      errors.push("Total commercial lines  agency premium is required.");
+ 
+    }
+    if (AgtAppointForm.numberOfCommercialLinesAccounts.length === 0) {
+      errors.push("Number of commercial lines accounts is required.");
+       
+    }
+    
+    if (AgtAppointForm.agencySpecialization.length === 0) {
+      errors.push("Agency specialization is required.");
+   
+    }
+    if (AgtAppointForm.sizeOfAccounts.length === 0) {
+      errors.push("Size of accounts is required.");
+    
+    }
+    if(errors){
+        setErrorMessages(errors)
+        return
+    }
+    setErrorMessages([]);
     appendAgtAppoint(AgtAppointForm).then(() => {
       resetAgtAppointForm();
     });
@@ -717,6 +811,11 @@ export const AgtAppointForm = () => {
           </span>
         </div>
         </div>
+    <div class="row">
+      {
+        errorMessages ? errorMessages.map(message => <p style={{color: 'red'}}>{message}</p>) : <></>
+      }
+    </div>
 
     <div class="row">
       <div class="form-actions spacing-top-md-lg col-md-6 col-md-offset-5">
