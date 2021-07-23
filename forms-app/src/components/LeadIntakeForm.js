@@ -1,10 +1,29 @@
-import PropTypes from "prop-types";
+import PropTypes, {object} from "prop-types";
 import { useState } from 'react';
 import { useForm } from "../hooks/useForm";
 
 export const LeadIntakeForm = ({ onSubmitForm }) => {
 
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState({
+        fullName: false,
+        nNumber: false,
+        agencyEmail: false,
+        agencyPhoneNumber: false,
+        insuredName: false,
+        firstName: false,
+        lastName: false,
+        customerPhoneNumber: false,
+        streetAddress: false,
+        city: false,
+        state: false,
+        zipCode: false,
+        customerEmailAddress: false,
+        descBusinessOperation: false,
+        typeOfQuote: false,
+        coverages: false,
+        blscRepName: false,
+        formType: false,
+    });
 
     const coveragesArray = [];
 
@@ -21,13 +40,13 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
             streetAddress: '',
             city: '',
             state: '',
+            zipCode: '',
             customerEmailAddress: '',
             descBusinessOperation: '',
             typeOfQuote: '',
             coverages: [],
             blscRepName: '',
             formType: '',
-
         }
     );
 
@@ -43,87 +62,95 @@ export const LeadIntakeForm = ({ onSubmitForm }) => {
         leadIntakeForm.coverages = coveragesArray;
 
         if (leadIntakeForm.fullName.length === 0) {
-            setErrorMessage("Liberty Rep Full Name required");
-
-            return;
+            errors.fullName = true
+            console.log(errors, "first")
         }
-
         if (leadIntakeForm.nNumber.length === 0) {
-            setErrorMessage("USCM Rep N Number required");
-            return;
+            errors.nNumber = true
         }
-
-
         if (leadIntakeForm.agencyEmail.length === 0) {
-            setErrorMessage("Valid Email Address required");
-
-            return;
+            errors.agencyEmail = true
         }
-
         if (leadIntakeForm.agencyPhoneNumber.length === 0) {
-            setErrorMessage("Valid Cell Phone Number (Numbers Only) required");
-
-            return;
+            errors.agencyPhoneNumber = true
         }
-
         if (leadIntakeForm.insuredName.length === 0) {
-            setErrorMessage("Business Name required");
-
-            return;
+            errors.insuredName = true
         }
         if (leadIntakeForm.firstName.length === 0) {
-            setErrorMessage("First Name required");
-
-            return;
+            errors.firstName = true
         }
         if (leadIntakeForm.lastName.length === 0) {
-            setErrorMessage("Last Name required");
+            errors.lastName = true
+        }
+        if (leadIntakeForm.customerPhoneNumber.length === 0) {
+            errors.customerPhoneNumber = true
+        }
+        if (leadIntakeForm.streetAddress.length === 0) {
+            errors.streetAddress = true
+        }
+        if (leadIntakeForm.city.length === 0) {
+            errors.city = true
+        }
+        // if (leadIntakeForm.state.length === 0) {
+        //     errors.state = true
+        // }
+        if (leadIntakeForm.zipCode.length === 0) {
+            errors.zipCode = true
+        }
+        if (leadIntakeForm.customerEmailAddress.length === 0) {
+            errors.customerEmailAddress = true
+        }
+        if (leadIntakeForm.descBusinessOperation.length === 0) {
+            errors.descBusinessOperation = true
+        }
+        if (leadIntakeForm.typeOfQuote.length === 0) {
+            errors.typeOfQuote = true
+        }
+        // if (leadIntakeForm.coverages.length === 0) {
+        //     errors = {...errorMessage, coverages: true}
+        // }
+        // if (leadIntakeForm.blscRepName.length === 0) {
+        //     errors = {...errorMessage, blscRepName: true}
+        // }
+        // if (leadIntakeForm.formType.length === 0) {
+        //     errors.formType = true
+        // }
 
-            return;
+        console.log(errors)
+        setErrorMessage(errors)
+        for (const property in errors) {
+            if (errors[property] === true) return;
         }
 
 
-            if (leadIntakeForm.customerPhoneNumber.length === 0) {
-                setErrorMessage("Valid Phone Number (Numbers Only)required");
-
-                return;
-            }
-
-
-            if (leadIntakeForm.streetAddress.length === 0) {
-                setErrorMessage("Street Address required");
-
-                return;
-            }
-            if (leadIntakeForm.city.length === 0) {
-                setErrorMessage("City required");
-
-                return;
-            }
-
-
-            if (leadIntakeForm.state.length === 0) {
-                setErrorMessage("State required");
-
-                return;
-            }
-            if (leadIntakeForm.zipCode.length === 0) {
-                setErrorMessage("Valid Email Address required");
-
-                return;
-            }
-            if (leadIntakeForm.zipCode.length === 0) {
-                setErrorMessage("USCM Rep N Number required");
-
-                return;
-            }
-    
-
-setErrorMessage('');
-onSubmitForm(leadIntakeForm).then(() => {
-    resetLeadIntakeForm();
-});
-    };
+    setErrorMessage(
+      {
+          fullName: false,
+          nNumber: false,
+          agencyEmail: false,
+          agencyPhoneNumber: false,
+          insuredName: false,
+          firstName: false,
+          lastName: false,
+          customerPhoneNumber: false,
+          streetAddress: false,
+          city: false,
+          state: false,
+          zipCode: false,
+          customerEmailAddress: false,
+          descBusinessOperation: false,
+          typeOfQuote: false,
+          coverages: false,
+          blscRepName: false,
+          formType: false,
+      }
+    );
+    onSubmitForm(leadIntakeForm).then(() => {
+        console.log("submittings")
+        resetLeadIntakeForm();
+    });
+};
 
 const handleCheckboxChange = (data) => {
         coveragesArray.push(data.target.value);
@@ -152,7 +179,7 @@ return (
                         className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
                         name="fullName" value={leadIntakeForm.fullName} onChange={change} />
                     <br />
-                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>
+                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.fullName ? 'inline' : 'none' }}>
                         Liberty Rep Full Name required</span>
                 </div>
                 <div className="col-md-6 form-group lmgbi_formEntry">
@@ -165,7 +192,7 @@ return (
                         className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr"
                         name="nNumber" value={leadIntakeForm.nNumber} onChange={change} />
                     <br />
-                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>
+                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.nNumber ? 'inline' : 'none' }}>
                         USCM Rep N Number required</span>
                     <span id="USCMRepNNumber_Alert" style={{ color: 'red', display: 'none' }}>
                         Rep N number must be entered as Nxxxxxxx or nxxxxxxx.</span>
@@ -182,14 +209,14 @@ return (
                     <label className="lmgbi_formTitle">Liberty Rep Liberty Mutual eMail</label>
                     <input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_formValidEmail lmgbi_useNameAttr"
                         type="text" maxLength="80" data-field-name="00N3n000003vMG6" name="agencyEmail" value={leadIntakeForm.agencyEmail} onChange={change} />
-                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>Valid Email Address required</span>
+                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.agencyEmail ? 'inline' : 'none' }}>Valid Email Address required</span>
                 </div>
                 <div className="lmgbi_formEntry form-group col-sm-6">
                     <span className="required-marker"></span>
                     <label className="lmgbi_formTitle">Cell Phone Number<strong>(Numbers Only)</strong></label>
                     <input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_formValidFax lmgbi_useNameAttr"
                         type="text" maxLength="10" data-field-name="00N3n000003vMG8" name="agencyPhoneNumber" value={leadIntakeForm.agencyPhoneNumber} onChange={change} />
-                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>
+                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.agencyPhoneNumber ? 'inline' : 'none' }}>
                         Valid Cell Phone Number (Numbers Only) required</span>
                 </div>
             </div>
@@ -199,27 +226,33 @@ return (
             <div className="form-group">
                 <div className="row row-offset-double">
                     <div className="lmgbi_formEntry form-group col-sm-6">
-                        <span className="required-marker"></span><label className="lmgbi_formTitle">Named Insured</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" type="text" maxLength="255" data-field-name="company" name="insuredName" value={leadIntakeForm.insuredName} onChange={change} /><span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>Business Name required</span>
+                        <span className="required-marker"></span><label className="lmgbi_formTitle">Named Insured</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" type="text" maxLength="255" data-field-name="company" name="insuredName" value={leadIntakeForm.insuredName} onChange={change} />
+                        <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.insuredName ? 'inline' : 'none' }}>Business Name required</span>
                     </div>
                     <div className="lmgbi_formEntry form-group col-sm-6">
-                        <span className="required-marker"></span><label className="lmgbi_formTitle">First Name</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" type="text" maxLength="40" data-field-name="first_name" name="firstName" value={leadIntakeForm.firstName} onChange={change} /><span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>First Name required</span>
+                        <span className="required-marker"></span><label className="lmgbi_formTitle">First Name</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" type="text" maxLength="40" data-field-name="first_name" name="firstName" value={leadIntakeForm.firstName} onChange={change} />
+                        <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.firstName ? 'inline' : 'none' }}>First Name required</span>
                     </div>
                 </div>
                 <div className="row row-offset-double">
                     <div className="lmgbi_formEntry form-group col-sm-6">
-                        <span className="required-marker"></span><label className="lmgbi_formTitle">Last Name</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" type="text" maxLength="80" data-field-name="last_name" name="lastName" value={leadIntakeForm.lastName} onChange={change} /><span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>Last Name required</span>
+                        <span className="required-marker"></span><label className="lmgbi_formTitle">Last Name</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" type="text" maxLength="80" data-field-name="last_name" name="lastName" value={leadIntakeForm.lastName} onChange={change} />
+                        <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.lastName ? 'inline' : 'none' }}>Last Name required</span>
                     </div>
                     <div className="lmgbi_formEntry form-group col-sm-6">
-                        <span className="required-marker"></span><label className="lmgbi_formTitle">Phone Number</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_formValidFax lmgbi_useNameAttr" type="text" maxLength="10" data-field-name="phone" name="customerPhoneNumber" value={leadIntakeForm.customerPhoneNumber} onChange={change} /><span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>Valid Phone Number (Numbers Only)required</span>
+                        <span className="required-marker"></span><label className="lmgbi_formTitle">Phone Number</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_formValidFax lmgbi_useNameAttr" type="text" maxLength="10" data-field-name="phone" name="customerPhoneNumber" value={leadIntakeForm.customerPhoneNumber} onChange={change} />
+                        <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.customerPhoneNumber ? 'inline' : 'none' }}>Valid Phone Number (Numbers Only)required</span>
                     </div>
                 </div>
                 <div className="form-group">
                     <div className="row row-offset-double">
                         <div className="lmgbi_formEntry form-group col-sm-6">
-                            <span className="required-marker"></span><label className="lmgbi_formTitle">Street Address</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" type="text" maxLength="255" data-field-name="street" name="streetAddress" value={leadIntakeForm.streetAddress} onChange={change} /><span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>Street Address required</span>
+                            <span className="required-marker"></span><label className="lmgbi_formTitle">Street Address</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" type="text" maxLength="255" data-field-name="street" name="streetAddress" value={leadIntakeForm.streetAddress} onChange={change} />
+                            <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.streetAddress ? 'inline' : 'none' }}>Street Address required</span>
                         </div>
                         <div className="lmgbi_formEntry form-group col-sm-6">
-                            <span className="required-marker"></span><label className="lmgbi_formTitle">City</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" id="City" type="text" maxLength="25" data-field-name="city" name="city" value={leadIntakeForm.city} onChange={change} /><span className="lmgbi_formAlert" id="City_Alert0" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>City required</span><span id="City_Alert" sstyle={{ color: 'red', display: 'none' }}></span>
+                            <span className="required-marker"></span><label className="lmgbi_formTitle">City</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" id="City" type="text" maxLength="25" data-field-name="city" name="city" value={leadIntakeForm.city} onChange={change} />
+                            <span className="lmgbi_formAlert" id="City_Alert0" style={{ color: 'red', display: errorMessage.city ? 'inline' : 'none' }}>City required</span><span id="City_Alert" sstyle={{ color: 'red', display: 'none' }}></span>
                         </div>
                     </div>
                     <div className="row row-offset-double">
@@ -286,12 +319,14 @@ return (
                         </div>
                         <div className="col-sm-4">&#160;</div>
                         <div className="lmgbi_formEntry form-group col-sm-6">
-                            <span className="required-marker"></span><label className="lmgbi_formTitle">Zip Code</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_formValidZip lmgbi_useNameAttr" type="text" maxLength="10" data-field-name="zip" name="zipCode" value={leadIntakeForm.zipCode} onChange={change} /><span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>Zip Code required</span>
+                            <span className="required-marker"></span><label className="lmgbi_formTitle">Zip Code</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_formValidZip lmgbi_useNameAttr" type="text" maxLength="10" data-field-name="zip" name="zipCode" value={leadIntakeForm.zipCode} onChange={change} />
+                            <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.zipCode ? 'inline' : 'none' }}>Zip Code required</span>
                         </div>
                     </div>
                     <div className="row row-offset-double">
                         <div className="lmgbi_formEntry form-group col-sm-6">
-                            <span className="required-marker"></span><label className="lmgbi_formTitle">Email Address</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_confEmail lmgbi_formValidEmail lmgbi_useNameAttr" type="text" maxLength="80" data-field-name="email" name="customerEmailAddress" value={leadIntakeForm.customerEmailAddress} onChange={change} /><span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage ? 'inline' : 'none' }}>Valid Email Address required</span>
+                            <span className="required-marker"></span><label className="lmgbi_formTitle">Email Address</label><input className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_confEmail lmgbi_formValidEmail lmgbi_useNameAttr" type="text" maxLength="80" data-field-name="email" name="customerEmailAddress" value={leadIntakeForm.customerEmailAddress} onChange={change} />
+                            <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.customerEmailAddress ? 'inline' : 'none' }}>Valid Email Address required</span>
                         </div>
                     </div>
                 </div>
@@ -301,14 +336,16 @@ return (
             <div className="form-group">
                 <div className="row row-offset-double" id="businesstype">
                     <div className="lmgbi_formEntry form-group col-sm-12">
-                        <span className="required-marker"></span><label className="lmgbi_formTitle">Description of business operation</label><textarea className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" id="businesstypetextarea" maxLength="255" wrap="soft" data-field-name="description" name="descBusinessOperation" value={leadIntakeForm.descBusinessOperation} onChange={change}></textarea><span className="lmgbi_formAlert" style={{ color: 'red', display: 'none' }}>Description of business operation required</span>
+                        <span className="required-marker"></span><label className="lmgbi_formTitle">Description of business operation</label><textarea className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" id="businesstypetextarea" maxLength="255" wrap="soft" data-field-name="description" name="descBusinessOperation" value={leadIntakeForm.descBusinessOperation} onChange={change}></textarea>
+                        <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.descBusinessOperation ? 'inline' : 'none'  }}>Description of business operation required</span>
                     </div>
                 </div>
                 <div className="row row-offset-double" id="quotetype">
                     <div className="lmgbi_formEntry form-group col-sm-12">
                         <strong> </strong><span className="required-marker"></span><strong></strong>
                         <label className="lmgbi_formTitle">
-                            <strong>Type of Quote</strong></label><textarea className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" id="quotetype" maxLength="400" wrap="soft" data-field-name="00N80000004F8jw" name="typeOfQuote" value={leadIntakeForm.typeOfQuote} onChange={change}></textarea><span className="lmgbi_formAlert" style={{ color: 'red', display: 'none' }}><strong>Type of Quote</strong></span><strong> </strong>
+                            <strong>Type of Quote</strong></label><textarea className="form-control lmgbi_formValue lmgbi_formRequired lmgbi_useNameAttr" id="quotetype" maxLength="400" wrap="soft" data-field-name="00N80000004F8jw" name="typeOfQuote" value={leadIntakeForm.typeOfQuote} onChange={change}></textarea>
+                        <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.typeOfQuote ? 'inline' : 'none'  }}><strong>Type of Quote</strong></span><strong> </strong>
                     </div>
                 </div>
                 <div className="row row-offset-double">
@@ -353,7 +390,7 @@ return (
                             <input className="lmgbi_formValue lmgbi_formRequired" type="radio" data-name="formtype" name="formType" value={leadIntakeForm.formType} onChange={change} /> Call transferred to BLSC. I will warm transfer my customer to the BLSC (844-219-6911) or am already working with the BLSC on this customer. (You MUST tell the agent that you've clicked submit so they can find this referral. </label>
                     </div>
                     <br />
-                    <span className="lmgbi_formAlert" style={{ color: 'red', display: 'none' }}> Form Type required </span>
+                    <span className="lmgbi_formAlert" style={{ color: 'red', display: errorMessage.formType ? 'inline' : 'none'  }}> Form Type required </span>
                 </div>
             </div>
             <br />
